@@ -1,0 +1,163 @@
+{
+  "entities": {
+    "Category": {
+      "title": "Category",
+      "description": "Product category for interior panels and finishing solutions",
+      "type": "object",
+      "properties": {
+        "name_en": { "type": "string", "maxLength": 100 },
+        "name_hi": { "type": "string", "maxLength": 100 },
+        "slug": { "type": "string", "maxLength": 100 },
+        "icon": { "type": "string", "maxLength": 50 },
+        "displayOrder": { "type": "number" },
+        "description_en": { "type": "string", "maxLength": 500 },
+        "description_hi": { "type": "string", "maxLength": 500 }
+      },
+      "required": ["name_en", "slug"]
+    },
+    "Product": {
+      "title": "Product",
+      "description": "Interior panel or lighting product with specifications and pricing",
+      "type": "object",
+      "properties": {
+        "name_en": { "type": "string", "maxLength": 150 },
+        "name_hi": { "type": "string", "maxLength": 150 },
+        "categoryId": { "type": "string", "maxLength": 50 },
+        "categorySlug": { "type": "string", "maxLength": 50 },
+        "description_en": { "type": "string", "maxLength": 1000 },
+        "description_hi": { "type": "string", "maxLength": 1000 },
+        "size": { "type": "string", "maxLength": 100 },
+        "thickness": { "type": "string", "maxLength": 100 },
+        "finish_colors": { "type": "string", "maxLength": 300 },
+        "price": { "type": "number" },
+        "priceUnit": { "type": "string", "maxLength": 50 },
+        "installationIncluded": { "type": "boolean" },
+        "images": { "type": "array" },
+        "featured": { "type": "boolean" },
+        "inStock": { "type": "boolean" },
+        "displayOrder": { "type": "number" },
+        "updatedAt": { "type": "string", "maxLength": 100 }
+      },
+      "required": ["name_en", "price", "priceUnit"]
+    },
+    "GalleryItem": {
+      "title": "GalleryItem",
+      "description": "Portfolio project image with panel details and location",
+      "type": "object",
+      "properties": {
+        "title_en": { "type": "string", "maxLength": 150 },
+        "title_hi": { "type": "string", "maxLength": 150 },
+        "category": { "type": "string", "maxLength": 50 },
+        "image": { "type": "string", "maxLength": 1000 },
+        "beforeImage": { "type": "string", "maxLength": 1000 },
+        "panelType": { "type": "string", "maxLength": 150 },
+        "linkedProductId": { "type": "string", "maxLength": 100 },
+        "location": { "type": "string", "maxLength": 100 },
+        "displayOrder": { "type": "number" },
+        "updatedAt": { "type": "string", "maxLength": 100 }
+      },
+      "required": ["title_en", "image", "category"]
+    },
+    "Testimonial": {
+      "title": "Testimonial",
+      "description": "Client review with rating and project details",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "maxLength": 100 },
+        "city": { "type": "string", "maxLength": 100 },
+        "rating": { "type": "number" },
+        "review_en": { "type": "string", "maxLength": 1000 },
+        "review_hi": { "type": "string", "maxLength": 1000 },
+        "projectType": { "type": "string", "maxLength": 150 },
+        "photo": { "type": "string", "maxLength": 1000 },
+        "approved": { "type": "boolean" },
+        "updatedAt": { "type": "string", "maxLength": 100 }
+      },
+      "required": ["name", "rating", "review_en"]
+    },
+    "Enquiry": {
+      "title": "Enquiry",
+      "description": "Customer quote request or contact lead",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "maxLength": 100 },
+        "phone": { "type": "string", "maxLength": 30 },
+        "city": { "type": "string", "maxLength": 100 },
+        "service": { "type": "string", "maxLength": 100 },
+        "approxAreaSqFt": { "type": "string", "maxLength": 50 },
+        "message": { "type": "string", "maxLength": 1500 },
+        "status": { "type": "string", "maxLength": 20 },
+        "createdAt": { "type": "string", "maxLength": 100 }
+      },
+      "required": ["name", "phone"]
+    },
+    "SiteContent": {
+      "title": "SiteContent",
+      "description": "Dynamic editable website hero copy, about story, counters, and faqs",
+      "type": "object",
+      "properties": {
+        "heroHeadline_en": { "type": "string", "maxLength": 200 },
+        "heroHeadline_hi": { "type": "string", "maxLength": 200 },
+        "heroSubheadline_en": { "type": "string", "maxLength": 300 },
+        "heroSubheadline_hi": { "type": "string", "maxLength": 300 },
+        "expYears": { "type": "number" },
+        "projectsCompleted": { "type": "number" },
+        "happyClients": { "type": "number" },
+        "guaranteeYears": { "type": "number" },
+        "aboutStory_en": { "type": "string", "maxLength": 3000 },
+        "aboutStory_hi": { "type": "string", "maxLength": 3000 },
+        "updatedAt": { "type": "string", "maxLength": 100 }
+      }
+    },
+    "Settings": {
+      "title": "Settings",
+      "description": "Business contact, address, phone, WhatsApp and theme settings",
+      "type": "object",
+      "properties": {
+        "businessName": { "type": "string", "maxLength": 100 },
+        "tagline_en": { "type": "string", "maxLength": 200 },
+        "phone": { "type": "string", "maxLength": 30 },
+        "whatsappNumber": { "type": "string", "maxLength": 30 },
+        "email": { "type": "string", "maxLength": 100 },
+        "address": { "type": "string", "maxLength": 300 },
+        "workingHours": { "type": "string", "maxLength": 150 },
+        "accentColor": { "type": "string", "maxLength": 30 },
+        "updatedAt": { "type": "string", "maxLength": 100 }
+      }
+    }
+  },
+  "firestore": {
+    "/categories/{categoryId}": {
+      "schema": "Category",
+      "description": "Public interior panel and service categories"
+    },
+    "/products/{productId}": {
+      "schema": "Product",
+      "description": "Public product catalogue with panel dimensions and pricing"
+    },
+    "/gallery/{galleryId}": {
+      "schema": "GalleryItem",
+      "description": "Showcase portfolio installations and before/after comparisons"
+    },
+    "/testimonials/{testimonialId}": {
+      "schema": "Testimonial",
+      "description": "Customer reviews and verified feedback"
+    },
+    "/enquiries/{enquiryId}": {
+      "schema": "Enquiry",
+      "description": "Quote requests submitted by prospective clients"
+    },
+    "/site_content/{contentId}": {
+      "schema": "SiteContent",
+      "description": "Global website headlines, statistics, and editorial content"
+    },
+    "/settings/{settingsId}": {
+      "schema": "Settings",
+      "description": "Global business configuration and contact points"
+    },
+    "/admins/{adminId}": {
+      "schema": { "$ref": "admins" },
+      "description": "Authorized administrators who can edit website content and view enquiries"
+    }
+  }
+}
